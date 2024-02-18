@@ -1,4 +1,5 @@
 import './app.css';
+import Products from './components/Products';
 
 function App() {
   const sampleText = 'and it is awesome';
@@ -7,6 +8,7 @@ function App() {
     <div id="appMainDiv">
       <h1 id="main-h1">This is a React Component {sampleText}</h1>
       <p id="main-p">This is a sample paragraph element</p>
+      <Products></Products>
       <button className="btn" type="button">
         Click Me
       </button>

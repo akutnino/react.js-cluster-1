@@ -1,0 +1,18 @@
+div[id='products-div'] {
+  border: 1px solid green;
+  margin: 10px;
+
+  h1[id='products-h1'] {
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  ul[id='priducts-ul'] {
+    border: 1px solid black;
+    list-style: circle;
+
+    li[class='products-item'] {
+      text-align: center;
+    }
+  }
+}
