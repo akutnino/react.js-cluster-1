@@ -1,12 +1,5 @@
 function App() {
-  const sampleText = 'This is a sample text.';
-  const paragraphElement = document.createElement('p');
-  const paragraphTextNode = document.createTextNode(sampleText);
-  paragraphElement.appendChild(paragraphTextNode);
-  paragraphElement.id = 'main-paragraph';
-  paragraphElement.className = 'mainElement';
-
-  return paragraphElement;
+  return <h1>This is a React Component</h1>;
 }
 
 export default App;
