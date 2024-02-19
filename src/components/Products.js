@@ -4,6 +4,9 @@ const productCount = 100;
 const imageUrl = require('./../images/logo192.png');
 const imageStyle = { width: '50px', height: '50px' };
 // const localProductStyles = { 'font-size': '25px' };
+const isAvailable = 'Un-Available';
+const productAvailability =
+  isAvailable === 'Available' ? 'Available' : 'Un-Available';
 
 function displayProductCount() {
   return productCount > 0 ? productCount : 'Zero';
@@ -29,6 +32,7 @@ function Products() {
         <button type="button">-</button>
         <label id="product-label"> {displayProductCount()} </label>
         <button type="button">+</button>
+        <h3 className={productAvailability}>This Product is: {isAvailable} </h3>
       </div>
     </div>
   );
