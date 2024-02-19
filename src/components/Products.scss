@@ -1,18 +1,25 @@
 div[id='products-div'] {
   border: 1px solid green;
-  margin: 10px;
 
-  h1[id='products-h1'] {
-    border: 1px solid black;
-    text-align: center;
-  }
+  ul[class='list-group shadow'] {
+    margin: 10px;
 
-  ul[id='priducts-ul'] {
-    border: 1px solid black;
-    list-style: circle;
+    li[class='list-group-item'] {
+      background-color: #f4f4f4;
 
-    li[class='products-item'] {
-      text-align: center;
+      div[class='li-div'] {
+        display: flex;
+        justify-content: space-between;
+
+        div[class='product-div-child'] {
+          border: 1px solid black;
+          align-self: center;
+        }
+
+        img[class='product-image'] {
+          border: 1px solid black;
+        }
+      }
     }
   }
 }
