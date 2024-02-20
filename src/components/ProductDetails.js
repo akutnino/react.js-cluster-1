@@ -1,3 +1,5 @@
+import Button from './Button';
+
 const basicStyle = {
   margin: '10px',
   padding: '5px',
@@ -18,11 +20,11 @@ function ProductDetails(props = {}) {
   return (
     <div className="d-flex align-items-center justify-content-start mt-1">
       <h6 className="font-weight-bold my-2">${props.price}</h6>
-      <button className="btn btn-primary">-</button>
+      <Button>-</Button>
       <label className="mylabel" style={basicStyle}>
         {displayProductCount()}
       </label>
-      <button className="btn btn-primary">+</button>
+      <Button>+</Button>
       <label className={productbadgeClass} style={basicStyle}>
         {productAvailability}
       </label>
