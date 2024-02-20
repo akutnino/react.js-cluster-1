@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './Button';
 
 const basicStyle = {
@@ -17,22 +17,23 @@ function ProductDetails(props = {}) {
   const productbadgeClass =
     props.isAvailable === true ? 'badge bg-success' : 'badge bg-danger';
 
-  let productCount = 0;
+  // let productCount = 0;
+  let [productCount, updateCount] = useState(0);
 
   function displayProductCount() {
     return productCount > 0 ? productCount : 'Zero';
   }
 
   function incrementProductCount() {
-    if (productCount < 0) return 0;
-    productCount += 1;
-    console.log(productCount);
+    // productCount += 1;
+    // console.log(productCount);
+    updateCount((productCount += 1));
   }
 
   function decrementProductCount() {
-    if (productCount < 0) return 0;
-    productCount -= 1;
-    console.log(productCount);
+    // productCount -= 1;
+    // console.log(productCount);
+    updateCount((productCount -= 1));
   }
 
   return (
