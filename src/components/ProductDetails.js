@@ -1,3 +1,4 @@
+import React from 'react';
 import Button from './Button';
 
 const basicStyle = {
@@ -30,6 +31,14 @@ function ProductDetails(props = {}) {
       </label>
     </div>
   );
+
+  // return React.createElement('div', {className: 'd-flex align-items-center justify-content-start mt-1'},
+  //         React.createElement('h6', {className: 'font-weight-bold my-2'}, `$${props.price}`),
+  //         React.createElement(Button, {}, '-'),
+  //         React.createElement('label', {className: 'mylabel', style: basicStyle}, displayProductCount()),
+  //         React.createElement(Button, {}, '+'),
+  //         React.createElement('label', {className: productbadgeClass, style: basicStyle}, productAvailability)
+  //     );
 }
 
 export default ProductDetails;
