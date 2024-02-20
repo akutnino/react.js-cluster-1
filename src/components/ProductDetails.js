@@ -7,14 +7,9 @@ const basicStyle = {
   border: '1px solid black',
 };
 
-function displayProductCount() {
-  const productCount = 100;
-  return productCount > 0 ? productCount : 'Zero';
-}
-
-function onMouseOverFunc(event) {
-  console.log(event);
-}
+// function onMouseOverFunc(event) {
+//   console.log(event);
+// }
 
 function ProductDetails(props = {}) {
   const productAvailability =
@@ -22,17 +17,32 @@ function ProductDetails(props = {}) {
   const productbadgeClass =
     props.isAvailable === true ? 'badge bg-success' : 'badge bg-danger';
 
+  let productCount = 0;
+
+  function displayProductCount() {
+    return productCount > 0 ? productCount : 'Zero';
+  }
+
+  function incrementProductCount() {
+    if (productCount < 0) return 0;
+    productCount += 1;
+    console.log(productCount);
+  }
+
+  function decrementProductCount() {
+    if (productCount < 0) return 0;
+    productCount -= 1;
+    console.log(productCount);
+  }
+
   return (
-    <div
-      className="d-flex align-items-center justify-content-start mt-1"
-      onMouseOver={onMouseOverFunc}
-    >
+    <div className="d-flex align-items-center justify-content-start mt-1">
       <h6 className="font-weight-bold my-2">${props.price}</h6>
-      <Button>-</Button>
+      <Button clickHandler={decrementProductCount}>-</Button>
       <label className="mylabel" style={basicStyle}>
         {displayProductCount()}
       </label>
-      <Button>+</Button>
+      <Button clickHandler={incrementProductCount}>+</Button>
       <label className={productbadgeClass} style={basicStyle}>
         {productAvailability}
       </label>
