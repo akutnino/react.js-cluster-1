@@ -12,6 +12,10 @@ function displayProductCount() {
   return productCount > 0 ? productCount : 'Zero';
 }
 
+function onMouseOverFunc(event) {
+  console.log(event);
+}
+
 function ProductDetails(props = {}) {
   const productAvailability =
     props.isAvailable === true ? 'Available' : 'Un-Available';
@@ -19,7 +23,10 @@ function ProductDetails(props = {}) {
     props.isAvailable === true ? 'badge bg-success' : 'badge bg-danger';
 
   return (
-    <div className="d-flex align-items-center justify-content-start mt-1">
+    <div
+      className="d-flex align-items-center justify-content-start mt-1"
+      onMouseOver={onMouseOverFunc}
+    >
       <h6 className="font-weight-bold my-2">${props.price}</h6>
       <Button>-</Button>
       <label className="mylabel" style={basicStyle}>
