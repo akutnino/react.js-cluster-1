@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
 const ProductForm = (props = {}) => {
-  let [productName, updateName] = useState({});
-  let [productPrice, updatePrice] = useState({});
-  let [productDesc, updateDesc] = useState({});
-  let [productAvail, updateAvail] = useState({});
-  let [productImage, updateImage] = useState({});
+  let [productName, updateName] = useState('');
+  let [productPrice, updatePrice] = useState('');
+  let [productDesc, updateDesc] = useState('');
+  let [productAvail, updateAvail] = useState('');
+  let [productImage, updateImage] = useState('');
 
   const nameInputHandler = function (event) {
     const targetValue = event.target.value;
@@ -23,7 +23,7 @@ const ProductForm = (props = {}) => {
   };
 
   const availabilityInputHandler = function (event) {
-    const targetValue = event.target.value;
+    const targetValue = event.target.checked;
     updateAvail(targetValue);
   };
 
@@ -32,8 +32,21 @@ const ProductForm = (props = {}) => {
     updateImage(targetValue);
   };
 
+  const createProductEvent = function (event) {
+    event.preventDefault();
+    const productObj = {
+      pID: 1,
+      pName: productName,
+      desc: productDesc,
+      isAvailable: Boolean(productAvail),
+      image: productImage,
+      price: Number(productPrice),
+    };
+    console.log(productObj);
+  };
+
   return (
-    <form className="row g-3">
+    <form className="row g-3" onSubmit={createProductEvent}>
       <div className="col-md-6">
         <label htmlFor="name">Product Name</label>
         <input
