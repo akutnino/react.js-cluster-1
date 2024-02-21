@@ -1,29 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ProductForm = (props = {}) => {
+  let [productName, updateName] = useState({});
+  let [productPrice, updatePrice] = useState({});
+  let [productDesc, updateDesc] = useState({});
+  let [productAvail, updateAvail] = useState({});
+  let [productImage, updateImage] = useState({});
+
   const nameInputHandler = function (event) {
     const targetValue = event.target.value;
-    console.log(targetValue);
+    updateName(targetValue);
   };
 
   const priceInputHandler = function (event) {
     const targetValue = event.target.value;
-    console.log(targetValue);
+    updatePrice(targetValue);
   };
 
   const descriptionInputHandler = function (event) {
     const targetValue = event.target.value;
-    console.log(targetValue);
+    updateDesc(targetValue);
   };
 
   const availabilityInputHandler = function (event) {
     const targetValue = event.target.value;
-    console.log(targetValue);
+    updateAvail(targetValue);
   };
 
   const imageInputHandler = function (event) {
     const targetValue = event.target.value;
-    console.log(targetValue);
+    updateImage(targetValue);
   };
 
   return (
