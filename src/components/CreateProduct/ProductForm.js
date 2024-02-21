@@ -4,7 +4,7 @@ const ProductForm = (props = {}) => {
   let [productName, updateName] = useState('');
   let [productPrice, updatePrice] = useState('');
   let [productDesc, updateDesc] = useState('');
-  let [productAvail, updateAvail] = useState('');
+  let [productAvail, updateAvail] = useState(false);
   let [productImage, updateImage] = useState('');
 
   const nameInputHandler = function (event) {
@@ -35,13 +35,19 @@ const ProductForm = (props = {}) => {
   const createProductEvent = function (event) {
     event.preventDefault();
     const productObj = {
-      pID: 1,
       pName: productName,
       desc: productDesc,
       isAvailable: Boolean(productAvail),
       image: productImage,
       price: Number(productPrice),
     };
+
+    updateName('');
+    updatePrice('');
+    updateDesc('');
+    updateAvail(false);
+    updateImage('');
+
     console.log(productObj);
   };
 
@@ -55,6 +61,7 @@ const ProductForm = (props = {}) => {
           id="name"
           placeholder="Product Name"
           onChange={nameInputHandler}
+          value={productName}
         />
       </div>
       <div className="col-md-6">
@@ -67,6 +74,7 @@ const ProductForm = (props = {}) => {
           id="price"
           placeholder="Product Price"
           onChange={priceInputHandler}
+          value={productPrice}
         />
       </div>
 
@@ -78,6 +86,7 @@ const ProductForm = (props = {}) => {
           id="description"
           placeholder="Product Description"
           onChange={descriptionInputHandler}
+          value={productDesc}
         />
       </div>
 
@@ -88,6 +97,7 @@ const ProductForm = (props = {}) => {
           role="switch"
           id="isAvailable"
           onChange={availabilityInputHandler}
+          checked={productAvail}
         />
         <label className="form-check-label" htmlFor="isAvailable">
           Is product available in stock?
@@ -101,6 +111,7 @@ const ProductForm = (props = {}) => {
           className="form-control"
           id="select-image"
           onChange={imageInputHandler}
+          value={productImage}
         />
       </div>
 
