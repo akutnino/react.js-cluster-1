@@ -1,9 +1,15 @@
 import React from 'react';
 import './App.css';
 import ProductList from './components/ProductList/ProductList';
+import CreateProduct from './components/CreateProduct/CreateProduct';
 
 function App() {
-  return <ProductList></ProductList>;
+  return (
+    <div>
+      <CreateProduct></CreateProduct>
+      <ProductList></ProductList>
+    </div>
+  );
 }
 
 export default App;
