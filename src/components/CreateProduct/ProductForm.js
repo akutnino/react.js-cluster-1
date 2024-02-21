@@ -1,35 +1,63 @@
 import React, { useState } from 'react';
 
 const ProductForm = (props = {}) => {
-  let [productName, updateName] = useState({});
-  let [productPrice, updatePrice] = useState({});
-  let [productDesc, updateDesc] = useState({});
-  let [productAvail, updateAvail] = useState({});
-  let [productImage, updateImage] = useState({});
+  // let [productName, updateName] = useState({});
+  // let [productPrice, updatePrice] = useState({});
+  // let [productDesc, updateDesc] = useState({});
+  // let [productAvail, updateAvail] = useState({});
+  // let [productImage, updateImage] = useState({});
+
+  let [userInput, userInputUpdate] = useState({
+    productName: '',
+    productPrice: '',
+    productDesc: '',
+    productAvail: '',
+    productImage: '',
+  });
 
   const nameInputHandler = function (event) {
     const targetValue = event.target.value;
-    updateName(targetValue);
+    // updateName(targetValue);
+    userInputUpdate({
+      ...userInput,
+      productName: targetValue,
+    });
   };
 
   const priceInputHandler = function (event) {
     const targetValue = event.target.value;
-    updatePrice(targetValue);
+    // updatePrice(targetValue);
+    userInputUpdate({
+      ...userInput,
+      productPrice: targetValue,
+    });
   };
 
   const descriptionInputHandler = function (event) {
     const targetValue = event.target.value;
-    updateDesc(targetValue);
+    // updateDesc(targetValue);
+    userInputUpdate({
+      ...userInput,
+      productDesc: targetValue,
+    });
   };
 
   const availabilityInputHandler = function (event) {
     const targetValue = event.target.value;
-    updateAvail(targetValue);
+    // updateAvail(targetValue);
+    userInputUpdate({
+      ...userInput,
+      productAvail: targetValue,
+    });
   };
 
   const imageInputHandler = function (event) {
     const targetValue = event.target.value;
-    updateImage(targetValue);
+    // updateImage(targetValue);
+    userInputUpdate({
+      ...userInput,
+      productImage: targetValue,
+    });
   };
 
   return (
