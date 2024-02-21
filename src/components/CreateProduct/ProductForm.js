@@ -18,45 +18,60 @@ const ProductForm = (props = {}) => {
   const nameInputHandler = function (event) {
     const targetValue = event.target.value;
     // updateName(targetValue);
-    userInputUpdate({
-      ...userInput,
-      productName: targetValue,
+    // userInputUpdate({
+    //   ...userInput,
+    //   productName: targetValue,
+    // });
+    userInputUpdate(() => {
+      return { ...userInput, productName: targetValue };
     });
   };
 
   const priceInputHandler = function (event) {
     const targetValue = event.target.value;
     // updatePrice(targetValue);
-    userInputUpdate({
-      ...userInput,
-      productPrice: targetValue,
+    // userInputUpdate({
+    //   ...userInput,
+    //   productPrice: targetValue,
+    // });
+    userInputUpdate(() => {
+      return { ...userInput, productPrice: targetValue };
     });
   };
 
   const descriptionInputHandler = function (event) {
     const targetValue = event.target.value;
     // updateDesc(targetValue);
-    userInputUpdate({
-      ...userInput,
-      productDesc: targetValue,
+    // userInputUpdate({
+    //   ...userInput,
+    //   productDesc: targetValue,
+    // });
+    userInputUpdate(() => {
+      return { ...userInput, productDesc: targetValue };
     });
   };
 
   const availabilityInputHandler = function (event) {
     const targetValue = event.target.value;
     // updateAvail(targetValue);
-    userInputUpdate({
-      ...userInput,
-      productAvail: targetValue,
+    // userInputUpdate({
+    //   ...userInput,
+    //   productAvail: targetValue,
+    // });
+    userInputUpdate(() => {
+      return { ...userInput, productAvail: targetValue };
     });
   };
 
   const imageInputHandler = function (event) {
     const targetValue = event.target.value;
     // updateImage(targetValue);
-    userInputUpdate({
-      ...userInput,
-      productImage: targetValue,
+    // userInputUpdate({
+    //   ...userInput,
+    //   productImage: targetValue,
+    // });
+    userInputUpdate(() => {
+      return { ...userInput, productImage: targetValue };
     });
   };
 
