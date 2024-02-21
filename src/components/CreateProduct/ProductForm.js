@@ -48,7 +48,7 @@ const ProductForm = (props = {}) => {
     updateAvail(false);
     updateImage('');
 
-    console.log(productObj);
+    props.createProduct(productObj);
   };
 
   return (

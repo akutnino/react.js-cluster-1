@@ -46,6 +46,7 @@ const products = [
 
 const ProductList = (props = {}) => {
   const sampleText = 'and it is awesome';
+  console.log(props.newProduct);
 
   return (
     <div id="appMainDiv">
