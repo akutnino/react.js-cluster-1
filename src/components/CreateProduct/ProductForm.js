@@ -1,78 +1,35 @@
 import React, { useState } from 'react';
 
 const ProductForm = (props = {}) => {
-  // let [productName, updateName] = useState({});
-  // let [productPrice, updatePrice] = useState({});
-  // let [productDesc, updateDesc] = useState({});
-  // let [productAvail, updateAvail] = useState({});
-  // let [productImage, updateImage] = useState({});
-
-  let [userInput, userInputUpdate] = useState({
-    productName: '',
-    productPrice: '',
-    productDesc: '',
-    productAvail: '',
-    productImage: '',
-  });
+  let [productName, updateName] = useState({});
+  let [productPrice, updatePrice] = useState({});
+  let [productDesc, updateDesc] = useState({});
+  let [productAvail, updateAvail] = useState({});
+  let [productImage, updateImage] = useState({});
 
   const nameInputHandler = function (event) {
     const targetValue = event.target.value;
-    // updateName(targetValue);
-    // userInputUpdate({
-    //   ...userInput,
-    //   productName: targetValue,
-    // });
-    userInputUpdate(() => {
-      return { ...userInput, productName: targetValue };
-    });
+    updateName(targetValue);
   };
 
   const priceInputHandler = function (event) {
     const targetValue = event.target.value;
-    // updatePrice(targetValue);
-    // userInputUpdate({
-    //   ...userInput,
-    //   productPrice: targetValue,
-    // });
-    userInputUpdate(() => {
-      return { ...userInput, productPrice: targetValue };
-    });
+    updatePrice(targetValue);
   };
 
   const descriptionInputHandler = function (event) {
     const targetValue = event.target.value;
-    // updateDesc(targetValue);
-    // userInputUpdate({
-    //   ...userInput,
-    //   productDesc: targetValue,
-    // });
-    userInputUpdate(() => {
-      return { ...userInput, productDesc: targetValue };
-    });
+    updateDesc(targetValue);
   };
 
   const availabilityInputHandler = function (event) {
     const targetValue = event.target.value;
-    // updateAvail(targetValue);
-    // userInputUpdate({
-    //   ...userInput,
-    //   productAvail: targetValue,
-    // });
-    userInputUpdate(() => {
-      return { ...userInput, productAvail: targetValue };
-    });
+    updateAvail(targetValue);
   };
 
   const imageInputHandler = function (event) {
     const targetValue = event.target.value;
-    // updateImage(targetValue);
-    // userInputUpdate({
-    //   ...userInput,
-    //   productImage: targetValue,
-    // });
-    userInputUpdate(() => {
-      return { ...userInput, productImage: targetValue };
-    });
+    updateImage(targetValue);
   };
 
   return (
