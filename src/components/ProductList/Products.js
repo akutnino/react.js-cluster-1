@@ -2,24 +2,7 @@ import React from 'react';
 import './Products.css';
 import ProductDetails from './ProductDetails';
 
-// const productCount = 100;
-// const imageUrl = require('./../images/logo192.png');
-// const basicStyle = {
-//   margin: '10px',
-//   padding: '5px',
-//   border: '1px solid black',
-// };
-
-// function displayProductCount() {
-//   return productCount > 0 ? productCount : 'Zero';
-// }
-
 function Products(props = {}) {
-  // const productAvailability =
-  //   props.isAvailable === true ? 'Available' : 'Un-Available';
-  // const productbadgeClass =
-  //   props.isAvailable === true ? 'badge bg-success' : 'badge bg-danger';
-
   return (
     <div className="products-div">
       <ul className="list-group shadow">
