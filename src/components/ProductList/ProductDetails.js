@@ -7,10 +7,6 @@ const basicStyle = {
   border: '1px solid black',
 };
 
-// function onMouseOverFunc(event) {
-//   console.log(event);
-// }
-
 function ProductDetails(props = {}) {
   const productAvailability =
     props.isAvailable === true ? 'Available' : 'Un-Available';
