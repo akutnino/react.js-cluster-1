@@ -1,8 +1,8 @@
 import React from 'react';
 import Products from './Products';
+import './ProductList.css';
 
 const ProductList = (props = {}) => {
-  const sampleText = 'and it is awesome';
   const productListArray = props.productList.map((product) => {
     return (
       <Products
@@ -18,14 +18,8 @@ const ProductList = (props = {}) => {
   });
 
   return (
-    <div id="appMainDiv">
-      <h1 id="main-h1">This is a React Component {sampleText}</h1>
-      <p id="main-p">This is a sample paragraph element</p>
-      {productListArray}
-      <button className="btn" type="button">
-        Click Me
-      </button>
-      <input id="textInput" type="text" title="text-input"></input>
+    <div className="products-div">
+      <ul className="list-group shadow">{productListArray}</ul>
     </div>
   );
 };
