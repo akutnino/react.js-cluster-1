@@ -6,6 +6,7 @@ const ProductList = (props = {}) => {
   const productListArray = props.productList.map((product) => {
     return (
       <Products
+        key={product.pID}
         id={product.pID}
         name={product.pName}
         description={product.desc}
