@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import ProductList from './components/ProductList/ProductList';
 import CreateProduct from './components/CreateProduct/CreateProduct';
+import FilterProduct from './components/FilterProduct/FilterProduct';
 
 const products = [
   {
@@ -54,8 +55,9 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-div">
       <CreateProduct createProduct={createProduct}></CreateProduct>
+      <FilterProduct></FilterProduct>
       <ProductList productList={productList}></ProductList>
     </div>
   );
