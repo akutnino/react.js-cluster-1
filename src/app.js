@@ -49,16 +49,29 @@ const products = [
 
 function App() {
   let [productList, updateProductList] = useState(products);
+  let [filterTextValue, updateFilterValue] = useState('all');
+
   const createProduct = function (product) {
     product.pID = productList.length + 1;
     updateProductList((previousList) => [product, ...previousList]);
   };
 
+  const productFilterValue = function (filterValue) {
+    updateFilterValue(filterValue);
+  };
+
+  const filteredProductList = productList.filter((product) => {
+    if (filterTextValue === 'available') return product.isAvailable === true;
+    if (filterTextValue === 'unavailable') return product.isAvailable === false;
+
+    return product;
+  });
+
   return (
     <div className="app-div">
       <CreateProduct createProduct={createProduct}></CreateProduct>
-      <FilterProduct></FilterProduct>
-      <ProductList productList={productList}></ProductList>
+      <FilterProduct productFilterValue={productFilterValue}></FilterProduct>
+      <ProductList productList={filteredProductList}></ProductList>
     </div>
   );
 }
