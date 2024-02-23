@@ -35,7 +35,9 @@ function ProductDetails(props = {}) {
   return (
     <div className="d-flex align-items-center justify-content-start mt-1">
       <h6 className="font-weight-bold my-2">${props.price}</h6>
-      <Button clickHandler={decrementProductCount}>-</Button>
+      <Button clickHandler={decrementProductCount} disable={productCount === 0}>
+        -
+      </Button>
       <label className="mylabel" style={basicStyle}>
         {displayProductCount()}
       </label>
