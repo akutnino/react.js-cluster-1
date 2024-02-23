@@ -4,7 +4,13 @@ import ProductDetails from './ProductDetails';
 
 function Products(props = {}) {
   return (
-    <li className="list-group-item" style={{ margin: '15px' }}>
+    <li
+      className="list-group-item"
+      style={{
+        margin: '15px',
+        backgroundColor: props.isAvailable ? 'white' : '#dedede',
+      }}
+    >
       <div className="li-div">
         <div className="product-div-child">
           <h5 className="mt-0 font-weight-bold mb-2">{props.name}</h5>
