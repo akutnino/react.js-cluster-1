@@ -3,6 +3,14 @@ import Products from './Products';
 import './ProductList.css';
 
 const ProductList = (props = {}) => {
+  if (props.productList.length === 0) {
+    return (
+      <div style={{ margin: '0 20px', color: 'white' }}>
+        <h3>No Products Available</h3>
+      </div>
+    );
+  }
+
   const productListArray = props.productList.map((product) => {
     return (
       <Products
