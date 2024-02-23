@@ -49,6 +49,7 @@ const ProductForm = (props = {}) => {
     updateImage('');
 
     props.createProduct(productObj);
+    props.onCancel();
   };
 
   return (
@@ -117,6 +118,13 @@ const ProductForm = (props = {}) => {
 
       <button type="submit" className="btn btn-primary">
         Add Product
+      </button>
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={props.onCancel}
+      >
+        Cancel
       </button>
     </form>
   );
