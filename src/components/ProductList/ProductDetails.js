@@ -41,10 +41,16 @@ function ProductDetails(props = {}) {
       <label className="mylabel" style={basicStyle}>
         {displayProductCount()}
       </label>
-      <Button clickHandler={incrementProductCount}>+</Button>
+      <Button
+        clickHandler={incrementProductCount}
+        disable={props.stock === 0 || displayProductCount() === props.stock}
+      >
+        +
+      </Button>
       <label className={productbadgeClass} style={basicStyle}>
         {productAvailability}
       </label>
+      <h6 className="font-weight-bold my-2">Current Stock:{props.stock}</h6>
     </div>
   );
 

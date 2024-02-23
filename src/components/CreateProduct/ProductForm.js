@@ -6,6 +6,8 @@ const ProductForm = (props = {}) => {
   let [productDesc, updateDesc] = useState('');
   let [productAvail, updateAvail] = useState(false);
   let [productImage, updateImage] = useState('');
+  let [stockQuantity, updateStockQuan] = useState(true);
+  let [stockInput, updateStockInput] = useState('');
 
   const nameInputHandler = function (event) {
     const targetValue = event.target.value;
@@ -25,11 +27,17 @@ const ProductForm = (props = {}) => {
   const availabilityInputHandler = function (event) {
     const targetValue = event.target.checked;
     updateAvail(targetValue);
+    updateStockQuan(productAvail);
   };
 
   const imageInputHandler = function (event) {
     const targetValue = event.target.value;
     updateImage(targetValue);
+  };
+
+  const stockInputHandler = function (event) {
+    const targetValue = event.target.value;
+    updateStockInput(targetValue);
   };
 
   const createProductEvent = function (event) {
@@ -40,6 +48,7 @@ const ProductForm = (props = {}) => {
       isAvailable: Boolean(productAvail),
       image: productImage,
       price: Number(productPrice),
+      stock: Number(stockInput),
     };
 
     updateName('');
@@ -47,6 +56,7 @@ const ProductForm = (props = {}) => {
     updateDesc('');
     updateAvail(false);
     updateImage('');
+    updateStockInput('');
 
     props.createProduct(productObj);
     props.onCancel();
@@ -103,6 +113,23 @@ const ProductForm = (props = {}) => {
         <label className="form-check-label" htmlFor="isAvailable">
           Is product available in stock?
         </label>
+      </div>
+
+      <div className="stock-input-div">
+        <label className="form-stock-label" htmlFor="stock">
+          Product quantity in stock?
+        </label>
+        <input
+          disabled={stockQuantity}
+          min="1"
+          step="1"
+          className="form-control"
+          type="number"
+          id="stock"
+          placeholder="Product Stock Quantity"
+          onChange={stockInputHandler}
+          value={stockInput}
+        />
       </div>
 
       <div className="form-group">

@@ -12,6 +12,7 @@ const products = [
     isAvailable: true,
     image: 'images/fresh-milk.png',
     price: 14,
+    stock: 5,
   },
   {
     pID: 2,
@@ -20,6 +21,7 @@ const products = [
     isAvailable: false,
     image: 'images/cottage-cheese.png',
     price: 10,
+    stock: 0,
   },
   {
     pID: 3,
@@ -28,6 +30,7 @@ const products = [
     isAvailable: true,
     image: 'images/brocoli.png',
     price: 15,
+    stock: 5,
   },
   {
     pID: 4,
@@ -36,6 +39,7 @@ const products = [
     isAvailable: true,
     image: 'images/oranges.png',
     price: 20,
+    stock: 5,
   },
   {
     pID: 5,
@@ -44,6 +48,7 @@ const products = [
     isAvailable: false,
     image: 'images/olive-oil.png',
     price: 14,
+    stock: 0,
   },
 ];
 

@@ -21,6 +21,7 @@ const ProductList = (props = {}) => {
         isAvailable={product.isAvailable}
         imageUrl={product.image}
         price={product.price}
+        stock={product.stock}
       ></Products>
     );
   });
